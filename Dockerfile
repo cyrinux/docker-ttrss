@@ -33,7 +33,7 @@ RUN apt-get update -yqq && \
     git clone https://github.com/jangernert/FeedReader /tmp/feedreader && \
     mv /tmp/ff_xmllint/ff_xmllint /var/www/html/ttrss/plugins.local/ && \
     mv /tmp/ttrss-to-wallabag-v2/wallabag_v2 /var/www/html/ttrss/plugins.local/ && \
-    mv /tmp/feedreader/data /var/www/html/ttrss/plugins.local/ && \
+    mv /tmp/feedreader/data/tt-rss-feedreader-plugin/api_feedreader /var/www/html/ttrss/plugins.local/ && \
 # Clean up
     rm -rf /var/www/html/ttrss/.git && \
     rm -rf /var/www/html/ttrss/plugins.local/af_feedmod/.git && \
