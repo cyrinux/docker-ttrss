@@ -26,13 +26,19 @@ RUN apt-get update -yqq && \
         supervisor \
         tidy && \
 # Checkout TT-RSS and plugins
-    git clone https://tt-rss.org/gitlab/fox/tt-rss.git /var/www/html/ttrss && \
+    git clone https://git.tt-rss.org/fox/tt-rss.git /var/www/html/ttrss && \
     git clone https://github.com/reuteras/ttrss_plugin-af_feedmod.git /var/www/html/ttrss/plugins.local/af_feedmod && \
     git clone https://github.com/fastcat/tt-rss-ff-xmllint /tmp/ff_xmllint && \
-    mv /tmp/ff_xmllint/ff_xmllint /var/www/html/ttrss/plugins.local && \
+    git clone https://github.com/joshp23/ttrss-to-wallabag-v2.git /tmp/ttrss-to-wallabag-v2 && \
+    git clone https://github.com/jangernert/FeedReader /tmp/feedreader && \
+    mv /tmp/ff_xmllint/ff_xmllint /var/www/html/ttrss/plugins.local/ && \
+    mv /tmp/ttrss-to-wallabag-v2/wallabag_v2 /var/www/html/ttrss/plugins.local/ && \
+    mv /tmp/feedreader/data /var/www/html/ttrss/plugins.local/ && \
 # Clean up
     rm -rf /var/www/html/ttrss/.git && \
     rm -rf /var/www/html/ttrss/plugins.local/af_feedmod/.git && \
+    rm -rf /tmp/feedreader && \
+    rm -rf /tmp/ttrss-to-wallabag-v2 && \
     apt-get remove -y git && \
     apt-get autoremove -y && \
     apt-get clean && \
