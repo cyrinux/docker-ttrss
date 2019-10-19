@@ -108,7 +108,7 @@
 	// *** Sphinx search plugin ***
 	// ****************************
 
-	define('SPHINX_SERVER', 'localhost:9312');
+	define('SPHINX_SERVER', 'sphinx:9312');
 	// Hostname:port combination for the Sphinx server.
 
 	define('SPHINX_INDEX', 'ttrss, delta');
@@ -170,7 +170,7 @@
 	// *** Other settings (less important) ***
 	// ***************************************
 
-	define('CHECK_FOR_UPDATES', true);
+	define('CHECK_FOR_UPDATES', false);
 	// Check for updates automatically if running Git version
 
 	define('ENABLE_GZIP_OUTPUT', false);
@@ -180,7 +180,7 @@
 	// if you experience weird errors and tt-rss failing to start, blank pages
 	// after login, or content encoding errors, disable it.
 
-	define('PLUGINS', 'auth_internal, note, api_feedreader, wallabag_v2');
+	define('PLUGINS', 'auth_internal, note, api_feedreader, wallabag_v2, search_sphinx');
 	// Comma-separated list of plugins to load automatically for all users.
 	// System plugins have to be specified here. Please enable at least one
 	// authentication plugin here (auth_*).
@@ -199,4 +199,5 @@
 	// Expected config version. Please update this option in config.php
 	// if necessary (after migrating all new options from this file).
 
+	define('SPHINX_ENABLED', true);
 	// vim:ft=php
